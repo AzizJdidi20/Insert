@@ -1,0 +1,52 @@
+# Insertion Sort Algorithm
+
+## Objective
+Insertion Sort is a simple sorting algorithm that works by building a sorted sequence in the array one element at a time. It is analogous to sorting playing cards in our hands, where each new card is inserted into the right place.
+
+## Instructions
+
+1. **Initialization:**
+   - Start with an unsorted array.
+
+2. **Iteration:**
+   - For each element at index `i` from 1 to the length of the array:
+     - Pick the element `arr[i]`.
+     - Insert it into the sorted sequence in the array from 0 to `i-1`.
+
+3. **Sorting Process:**
+   - Repeat the iteration until the entire array is sorted.
+
+## Implementation
+
+### Example in Pascal:
+
+```pascal
+PROGRAM Main;
+
+PROCEDURE InsertionSort(arr: ARRAY OF INTEGER);
+VAR
+    n: INTEGER;
+    i: INTEGER;
+    key: INTEGER;
+    j: INTEGER;
+BEGIN
+    n := length(arr);
+    for i := 1 to n - 1 DO
+    BEGIN
+        key := arr[i];
+        j := i - 1;
+
+        while (j >= 0) and (key < arr[j]) do
+        BEGIN
+            arr[j + 1] := arr[j];
+            j := j - 1;
+        END;
+
+        arr[j + 1] := key;
+    END;
+END;
+
+VAR
+    myArray: ARRAY[1..5] OF INTEGER = (5, 2, 4, 3, 1);
+
+BE
